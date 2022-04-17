@@ -1,0 +1,14 @@
+<p>form works!</p>
+<div>
+    <div class="container">
+        <form (ngSubmit)='getUsername()' #userForm='ngForm'>
+           <div class="form-group">
+            <label for="name"></label>
+            <input type="text" id="username" placeholder="github username" required class="form-control" {(ngModel)]= "newUser.username" name="username">
+        <!-- submit button -->
+            <button type="submit" class="btn btn-success">Search GitHub User & Repos</button>
+          </div>
+        </form>
+    </div>
+</div>
+<app-content></app-content>

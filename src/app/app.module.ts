@@ -6,19 +6,25 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display-component/display/display.component';
 import { ContentComponent } from './content-component/content/content.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileDetailsService } from './service/profile-details.service';
+import { FormComponent } from './form-component/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
-    ContentComponent
+    ContentComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProfileDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
