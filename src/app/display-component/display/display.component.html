@@ -1,6 +1,14 @@
 
 <div class="container-fluid">
     <!-- Navigation bar -->
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #195682;">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" routerLink="display" routerLinkActive='active'>Home<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" routerLink="/content" routerLinkActive='active'>About</a>
+          </div>
+        </nav>
+      </div>
     <!-- Carousel -->
     <div class="container">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -42,7 +50,11 @@
         </form>
     </div>
     </div>
-
+    <!-- content -->
+    <app-content></app-content>
+<blockquote>
+    {{quote?.quote}}
+</blockquote>
     <!-- Footer/copyright/icons -->
 
         <!-- Footer -->
@@ -102,3 +114,4 @@
 <!-- Footer -->
 </div>
 <p>display works!</p>
+
