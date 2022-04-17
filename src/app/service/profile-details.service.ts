@@ -9,7 +9,7 @@ import { User} from 'src/app/class/user';
 })
 export class ProfileDetailsService {
 title= 'hope';
-  // user:User | undefined;
+  user:User | undefined;
   private username:string; 
 
   constructor(private http:HttpClient) { 
@@ -24,7 +24,4 @@ title= 'hope';
     return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_id=" )
   	 
   }
-
-  }
-
-
+}
