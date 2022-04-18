@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayComponent } from './display-component/display/display.component';
-import { ContentComponent } from './content-component/content/content.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileDetailsService } from './service/profile-details.service';
 import { FormComponent } from './form-component/form/form.component';
@@ -15,7 +14,6 @@ import { ProfileSearchComponent } from './profile-search/profile-search.componen
   declarations: [
     AppComponent,
     DisplayComponent,
-    ContentComponent,
     FormComponent,
     ProfileSearchComponent
   ],
