@@ -3,17 +3,6 @@
 <p>Service New</p>
 
 <!-- format -->
-<div class="container">
-<div class="search">
-    <div class="panel-group">
-        <div class="panel panel-default">
-          <div class="panel-heading">Panel Content is: 
-          <small></small>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-body">Panel Content</div>
-        </div>
-      </div>
-</div>
-</div>
+<ul *ngFor="let user of users">
+  <li>{{user}}</li>
+</ul>

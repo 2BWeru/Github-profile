@@ -15,14 +15,22 @@ export class FormComponent implements OnInit {
  username:any;
  
   
-  users!:string;
+  users!:String[];
 
   constructor(private searchService:SearchService) {
     this.searchService=this.searchService;
    }
    getUsers(){
          this.searchService.getData().subscribe((data)=>{
-           console.log(data)
+           console.log(data);
+           this.users=data;
+           data.avatar_url, 
+           data.login,
+           data.use,
+           data.bio,
+           data.html_url,
+           data.repos
+
          })
   }
   

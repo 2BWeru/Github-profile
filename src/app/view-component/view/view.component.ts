@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { SearchService } from 'src/app/gitsearch-service/search.service';
 import {User} from '../../class/user';
 import { Repository } from '../../repository-class/repository';
@@ -14,16 +14,12 @@ export class ViewComponent implements OnInit {
   // profiledetailsservice!: ProfileDetailsService;
   searchservice!:SearchService;
   
-   users!:string;
+  @Input() users!: String[];
 
   constructor(private searchService:SearchService) {
     this.searchservice=this.searchservice;
    }
-   getUsers(){
-         this.searchService.getData().subscribe((data)=>{
-           console.log(data)
-         })
-  }
+   
 
   ngOnInit(): void {
   }
