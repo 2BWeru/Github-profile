@@ -10,13 +10,15 @@ import { FormComponent } from './form-component/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileSearchComponent } from './profile-search/profile-search.component';
 import { SearchService } from './gitsearch-service/search.service';
+import { ViewComponent } from './view-component/view/view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     FormComponent,
-    ProfileSearchComponent
+    ProfileSearchComponent,
+    ViewComponent
   ],
   imports: [
     BrowserModule,
