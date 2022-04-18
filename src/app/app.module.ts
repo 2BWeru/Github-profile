@@ -9,6 +9,7 @@ import { ProfileDetailsService } from './service/profile-details.service';
 import { FormComponent } from './form-component/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileSearchComponent } from './profile-search/profile-search.component';
+import { SearchService } from './gitsearch-service/search.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { ProfileSearchComponent } from './profile-search/profile-search.componen
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ProfileDetailsService],
+  providers: [SearchService,ProfileDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
