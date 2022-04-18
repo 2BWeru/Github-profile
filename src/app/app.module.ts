@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileDetailsService } from './service/profile-details.service';
 import { FormComponent } from './form-component/form/form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProfileSearchComponent } from './profile-search/profile-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayComponent,
     ContentComponent,
-    FormComponent
+    FormComponent,
+    ProfileSearchComponent
   ],
   imports: [
     BrowserModule,
