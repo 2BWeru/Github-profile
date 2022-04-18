@@ -1,6 +1,6 @@
 import { Component, OnInit,EventEmitter,Output} from '@angular/core';
-import { ProfileDetailsService } from 'src/app/service/profile-details.service';
 import {User} from '../../class/user';
+import { SearchService } from 'src/app/gitsearch-service/search.service';
 
 @Component({
   selector: 'app-form',
@@ -8,25 +8,34 @@ import {User} from '../../class/user';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
+  
   user!: User;
-  profiledetailsservice: typeof ProfileDetailsService;
   //  user:User | undefined;
     //  user:User | undefined;
-  username!: string;
+ username:any;
+ 
+  
+  users!:string;
 
-  constructor(profiledetail:ProfileDetailsService) { 
-    this.profiledetailsservice= ProfileDetailsService
+  constructor(private searchService:SearchService) {
+    this.searchService=this.searchService;
+   }
+   getUsers(){
+         this.searchService.getData().subscribe((data)=>{
+           console.log(data)
+         })
   }
-   
+  
   //  newUser = new User(0,"","","",0);
   //  @Output() addGoal = new EventEmitter<User>();
 
   //  submit btn**function**
-  getUserprofile(){
-    this.profiledetailsservice.getUserInfo(this.username);
-      }
-
+  
   ngOnInit(): void {
   }
 
 }
+function res(res: any, any: any) {
+  throw new Error('Function not implemented.');
+}
+

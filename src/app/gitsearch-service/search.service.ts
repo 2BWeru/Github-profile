@@ -2,45 +2,96 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { User} from 'src/app/class/user';
 import { Repository } from '../repository-class/repository';
+import { Observable } from 'rxjs';
 // import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService {
-  user!:User;
-  repository!:Repository;
-  // username: typeof User;
-  username!:any;
-  repoInfo = []; 
-  newUserData: any ;
-  profile : any ;
-  static getUserInfo: any;
-  newUserData2!: never;
-  
+ user:User;
+ repository : Repository;
   // for example
 
 
   constructor(private http:HttpClient) {
     console.log("Yeeeeyyyy");
-    this.user = new User(0,"","","","","",0);
+    this.user = new User("","","","","",0);
     this.repository = new Repository("","","","","","")
    }
   //  function to get github data
-  getProfileData(){
-    return this.http.get("https://api.github.com/users/" + this.username)
+
+   getData():Observable<any>{
+    //  decalare url variable
+    const baseUrl="https://api.github.com/users";
+         return this.http.get<any>(baseUrl)
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   newUserData(data:any){
+//     return this.http.get(this.baseUrl)
+//       // Succesful API request
+//       // this.user = new User(
+//       //   data.id, 
+//       //   data.avatar_url, 
+//       //   data.login,
+//       //   data.username, 
+//       //   data.bio,
+//       //   data.html_url,
+//       //   data.repos)
+  
+//   }
+// }
+//     interface ApiResponse{
+//       repos: number;
+//       username: string;
+//       id: number;
+//       bio:string,
+//       public_repos:number,
+//       login:string,
+//       avatar_url:string,
+//       name:string,
+//       full_name:string, 
+//       html_url:string ,
+        
+//   }
+    
+
     // .map((res: { json: () => any; }) => res.json());
 
-    interface ApiResponse{
-      bio:string,
-      public_repos:number,
-      login:string,
-      avatar_url:string,
-      name:string,
-      full_name:string, 
-      html_url:string ,
-        
-  }
+    
 //   let promise =new Promise<void>((resolve,reject)=>{
 //     // We then use the getmethod and pass to the API URL. we then call the subscribe function that takes in the response function that is called when the API request is successful and returns a response.
 //       return this.http.get<ApiResponse>("https://api.github.com/users/" + this.username).toPromise().then(profile=>{
@@ -94,4 +145,4 @@ export class SearchService {
   
   
       
-}}
+  }

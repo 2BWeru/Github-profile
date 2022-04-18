@@ -1,12 +1,12 @@
 
 <div class="container">
- <form (ngSubmit)='getUserprofile()' #userForm='ngForm'>
+ <form  #userForm='ngForm' action="#" method="get">
   <label for="name">GitHub Username</label>
-  <input type="text" id="username" placeholder="github username" required  name="username">
+  <input type="text" id="username" placeholder="github username" required [(ngModel)]="username" name="username">
   <!-- submit button -->
     <br>
     <br>
- <button type="submit"  (click)="getUserprofile()"class="btn btn btn-success">Search GitHub User & Repos</button>
+ <button type="submit"(click)="getUsers()" class="btn btn btn-success">Search GitHub User & Repos</button>
  </form>
 </div>
 

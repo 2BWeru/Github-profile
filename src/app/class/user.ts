@@ -1,8 +1,5 @@
 export class User {
-     public_repos!: number;
-    
-     
-     constructor(public id:number,
+    constructor(
                public avatar_url: string,
                public login: string, 
                public username:string,
