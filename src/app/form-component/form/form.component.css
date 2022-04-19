@@ -1,8 +1,14 @@
 #username{
     background-color: aqua;
 }
+.container{
+    font-family: 'Ramaraja', serif;
+    font-size: large;
+    /* border: 2px solid skyblue; */
+}
 input[type=search] {
     width: 50%;
+    font-family: 'Ramaraja', serif;
     padding: 12px 20px;
     margin: 8px 0;
     margin-left: 250px;
@@ -21,6 +27,5 @@ button{
     box-sizing: border-box; 
     background-color: rgb(34, 29, 29);
 }
-.formWrapper{
+/* .formWrapper{
     /* padding-top: 500px; */
-}

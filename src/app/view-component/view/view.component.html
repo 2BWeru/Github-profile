@@ -1,17 +1,31 @@
-<p>view works!</p>
-
-<p>Service New</p>
+<div class="view">
+<br>
 
 <!-- format -->
 
-<div class="container">
   <!-- display profile -->
- <div class="profile" *ngFor="let user of users">
-   <img src="" alt="image">
-  <pre>{{user}}</pre>
+  <div class="container">
+ <div class="profile" >
+   <div class="row">
+     <div class="col">
+   <img src="../../../assets/images/index.png" alt="image">
+   </div>
+   <div class="col">
+     <h6>Login:</h6>
+     <br>
+     <h6>Username:</h6>
+     <br>
+     <h6>Bio</h6>
+    <pre>{{user}}</pre>
+   </div>
+   </div>
+  
  </div>
 <!-- display repository -->
  <div class="repos">
- 
+   <div class="row">
+     <div class="col">Your repository:</div>
+   </div>
  </div>
+</div>
 </div>

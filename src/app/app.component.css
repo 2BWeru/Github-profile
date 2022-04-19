@@ -1,0 +1,26 @@
+/* font-family: 'Updock', cursive; */
+.container{
+    font-family: 'Updock', cursive;
+}
+nav{
+    background-color: slateblue;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+h1{
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Ramaraja', serif;
+}
+h3{
+    font-family:'Square Peg', cursive;
+
+}
+footer,p{
+    font-family:'Square Peg', cursive;
+    font-size: x-large;
+    font-weight: bold;
+}
+footer{
+    position: fixed;
+}
