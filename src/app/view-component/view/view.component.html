@@ -3,6 +3,15 @@
 <p>Service New</p>
 
 <!-- format -->
-<ul *ngFor="let user of users">
-  <li>{{user}}</li>
-</ul>
+
+<div class="container">
+  <!-- display profile -->
+ <div class="profile">
+   <img src="{{githubProfile.avatar_url}}" alt="image">
+  <pre>{{githubProfile}}</pre>
+ </div>
+<!-- display repository -->
+ <div class="repos">
+ 
+ </div>
+</div>

@@ -1,16 +1,23 @@
 
 <div class="container">
- <form  #userForm='ngForm' action="#" method="get">
-  <label for="name">GitHub Username</label>
-  <input type="text" id="username" placeholder="github username" required [(ngModel)]="username" name="username">
+  <div class="formWrapper">
+  <img src="/assets/images/images.png" alt="github">
+  <div class="card-body">
+ <form  #userForm='ngForm' action="#" method="get" (submit)="searchUser()">
+  <label for="name"></label>
+  <input type="search" id="username" placeholder="github username" required [(ngModel)]="username" name="username">
   <!-- submit button -->
     <br>
     <br>
- <button type="submit"(click)="getUsers()" class="btn btn btn-success">Search GitHub User & Repos</button>
- </form>
+    <!-- <input type="button" class="btn btn btn-success" placeholder="Search"  name="search"> -->
+    <!-- {{username}} ***to check data binding with form -->
+ <button type="submit" (click)="getUsers()" class="btn btn btn-success">Search GitHub User & Repos</button>
+</form>
+</div>
+</div>
 </div>
 
 
 <!-- <app-profile-search></app-profile-search> -->
 
-<app-view></app-view>
+<app-view [githubProfile]="githubProfile"></app-view>

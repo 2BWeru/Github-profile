@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { User} from 'src/app/class/user';
 import { Repository } from '../repository-class/repository';
-import { Observable } from 'rxjs';
+import { catchError, count, Observable, retry, throwError } from 'rxjs';
 // import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -11,23 +11,53 @@ import { Observable } from 'rxjs';
 export class SearchService {
  user:User;
  repository : Repository;
+  // httpClient: any;
   // for example
 
 
-  constructor(private http:HttpClient) {
+  constructor(private httpClient:HttpClient) {
     console.log("Yeeeeyyyy");
     this.user = new User("","","","","",0);
     this.repository = new Repository("","","","","","")
    }
-  //  function to get github data
+  //  function to get github data through btn
 
-   getData():Observable<any>{
-    //  decalare url variable
-    const baseUrl="https://api.github.com/users";
-         return this.http.get<any>(baseUrl)
-   }
+  //  getData(_username: any):Observable<any>{
+  //   //  decalare url variable
+  //   const baseUrl="https://api.github.com/users";
+  //        return this.httpClient.get<any>(baseUrl)
+  //  }
 
+  //  method 2
 
+  // get profile
+public getProfile(_username: any):Observable<any>{
+  let dataUrl = "https://api.github.com/users${username}" 
+  return this.httpClient.get<any>(dataUrl).pipe(
+  catchError(this.handleErrors)
+  );
+}
+// error function
+public handleErrors(error:HttpErrorResponse){
+  let errorMessage:string;
+  if (error.error instanceof ErrorEvent){
+    // clientside error
+    errorMessage= 'MESSAGE: ${error.error.message}';
+  }
+  else{
+    // server side error
+    errorMessage= 'STATUS:${error.status} MESSAGE : ${error.message}';
+  }
+  return throwError(errorMessage)
+}
+  // get repositories
+public getRepo(_username: any):Observable<any []>{
+    let dataUrl = "https://api.github.com/users/repos" 
+    return this.httpClient.get<any>(dataUrl).pipe(
+    catchError(this.handleErrors)
+    );
+  }
+  // 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
 
 
 
@@ -63,11 +93,11 @@ export class SearchService {
 //   newUserData(data:any){
 //     return this.http.get(this.baseUrl)
 //       // Succesful API request
-//       // this.user = new User(
-//       //   data.id, 
+//       // this.user data.id, 
 //       //   data.avatar_url, 
 //       //   data.login,
-//       //   data.username, 
+//       //   data.use= new User(
+//       //   rname, 
 //       //   data.bio,
 //       //   data.html_url,
 //       //   data.repos)
