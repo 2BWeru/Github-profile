@@ -13,7 +13,7 @@
  - Angular framework
 
  ### Link to website
- [link] (https://2bweru.github.io/Quotes/)
+![link] (https://github.com/2BWeru/Github-profile)
 
 ## Project setup instructions
 - Create a new workspace and initial application project.

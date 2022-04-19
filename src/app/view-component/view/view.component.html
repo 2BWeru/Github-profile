@@ -6,9 +6,9 @@
 
 <div class="container">
   <!-- display profile -->
- <div class="profile">
-   <img src="{{githubProfile.avatar_url}}" alt="image">
-  <pre>{{githubProfile}}</pre>
+ <div class="profile" *ngFor="let user of users">
+   <img src="" alt="image">
+  <pre>{{user}}</pre>
  </div>
 <!-- display repository -->
  <div class="repos">

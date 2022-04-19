@@ -1,6 +1,7 @@
 import { Component, OnInit,EventEmitter,Output} from '@angular/core';
 import {User} from '../../class/user';
 import { SearchService } from 'src/app/gitsearch-service/search.service';
+import { Repository } from 'src/app/repository-class/repository';
 
 @Component({
   selector: 'app-form',
@@ -10,6 +11,7 @@ import { SearchService } from 'src/app/gitsearch-service/search.service';
 export class FormComponent implements OnInit {
   
   user!: User;
+  repository!:Repository
   //  user:User | undefined;
     //  user:User | undefined;
  public username!:String;
@@ -22,17 +24,20 @@ export class FormComponent implements OnInit {
 
   constructor(private searchService:SearchService) {
     this.searchService=this.searchService;
+    this.user = new User("","","","","",0);
+    this.repository = new Repository("","","","","","")
    }
    searchUser(){}
   //  method 2
 
    getUsers(){
     // to get the github profile
-    this.searchService.getProfile(this.username).subscribe( (data)=>{
-          this.githubProfile=data;
-    }, (error) =>{
-         this.errorMessage=error;
+    this.searchService.getData(this.username).subscribe( (data: { name: any; full_name: any; description: any; html_url: any; clone_url: any; language: any; })=>{
+    }, (error: any) =>{
+         this.errorMessage=(error);
     });
+    
+              
 
     // to get github repos
     this.searchService.getRepo(this.username).subscribe( (data)=>{
@@ -56,7 +61,7 @@ export class FormComponent implements OnInit {
 
   //        })
 
-  
+  //       }
   //  newUser = new User(0,"","","",0);
   //  @Output() addGoal = new EventEmitter<User>();
 

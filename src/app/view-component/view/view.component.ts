@@ -15,7 +15,7 @@ export class ViewComponent implements OnInit {
   // profiledetailsservice!: ProfileDetailsService;
   searchservice!:SearchService;
   
-  @Input() githubProfile:any;
+  @Input() users:any;
 
   public getData:any;
  

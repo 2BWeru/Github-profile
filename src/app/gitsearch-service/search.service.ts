@@ -9,31 +9,24 @@ import { catchError, count, Observable, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class SearchService {
- user:User;
- repository : Repository;
+//  user:User;
+//  repository : Repository;
+  username!: string;
+  getUsers: any;
   // httpClient: any;
   // for example
 
 
   constructor(private httpClient:HttpClient) {
     console.log("Yeeeeyyyy");
-    this.user = new User("","","","","",0);
-    this.repository = new Repository("","","","","","")
+    
    }
   //  function to get github data through btn
 
-  //  getData(_username: any):Observable<any>{
-  //   //  decalare url variable
-  //   const baseUrl="https://api.github.com/users";
-  //        return this.httpClient.get<any>(baseUrl)
-  //  }
-
-  //  method 2
-
-  // get profile
-public getProfile(_username: any):Observable<any>{
-  let dataUrl = "https://api.github.com/users${username}" 
-  return this.httpClient.get<any>(dataUrl).pipe(
+   getData(_username: any):Observable<any>{
+    //  decalare url variable
+    const baseUrl="https://api.github.com/users";
+         return this.httpClient.get<any>(baseUrl).pipe(
   catchError(this.handleErrors)
   );
 }
