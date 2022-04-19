@@ -4,13 +4,15 @@
 .view{
     margin-top: 30px;
     width:80%;
-    height: 70%;
-    background-color:snow;
+    height: 600px;
+    background-color:teal;
     text-align: center;
     margin-left: 110px;
     font-family:'Ramaraja', serif;
     font-size: xx-large ;
     font-weight: bolder;
+    padding-bottom: 5px;
+    
 }
 h6{
     font-family:'Square Peg', cursive;

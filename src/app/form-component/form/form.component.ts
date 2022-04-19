@@ -21,6 +21,7 @@ export class FormComponent implements OnInit {
  public errorMessage:any;
  
   users!:String[];
+  // showDescription!: false;
 
   constructor(private searchService:SearchService) {
     this.searchService=this.searchService;
@@ -32,6 +33,7 @@ export class FormComponent implements OnInit {
 
    getUsers(){
     // to get the github profile
+    // this.searchService.showDescription = !this.searchService.showDescription;
     this.searchService.getData(this.username).subscribe( (data: { name: any; full_name: any; description: any; html_url: any; clone_url: any; language: any; })=>{
     }, (error: any) =>{
          this.errorMessage=(error);

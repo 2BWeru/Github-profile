@@ -21,6 +21,13 @@ footer,p{
     font-size: x-large;
     font-weight: bold;
 }
-footer{
-    position: fixed;
+.foot{
+    /* position: fixed; */
+    border: 2px solid slategray;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: antiquewhite;
 }
