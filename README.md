@@ -1,7 +1,8 @@
 # Quotes
 ## Aurthor - Betty Weru
  
- ## Github Profile Search - This a website built to ---
+ ## Github Profile Search - This a website built to ---search github profile .Shows details about the github profile and display repositories present.
+
 
  ### Techonology used 
  - HTML
